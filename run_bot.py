@@ -34,4 +34,5 @@ async def loop_bot_status():
 # run the bot
 loop_bot_status.start()
 bot.load_extension("helpercogs.help_cog")
+bot.load_extension("helpercogs.channel_about_cog")
 bot.run(TOKEN)
