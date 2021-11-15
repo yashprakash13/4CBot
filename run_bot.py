@@ -11,7 +11,7 @@ from botutils.constants import *
 
 TOKEN = os.environ.get("DISCORD_TOKEN")
 
-bot = Bot(command_prefix=".")
+bot = Bot(command_prefix=".", help_command=None)
 
 load_dotenv()
 
@@ -33,4 +33,5 @@ async def loop_bot_status():
 
 # run the bot
 loop_bot_status.start()
+bot.load_extension("helpercogs.help_cog")
 bot.run(TOKEN)
