@@ -32,6 +32,31 @@ async def loop_bot_status():
 
 
 # run the bot
+# loop_bot_status.start()
+# bot.load_extension("helpercogs.help_cog")
+# bot.load_extension("helpercogs.channel_about_cog")
+# bot.run(TOKEN)
+
+from threading import Thread
+
+import uvicorn
+from fastapi import FastAPI
+
+app = FastAPI()  # notice that the app instance is called `app`, this is very important.
+
+
+def run():
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+@app.get("/")
+async def run_bot():
+    t = Thread(target=run)
+    t.start()
+
+
+run_bot()
+
 loop_bot_status.start()
 bot.load_extension("helpercogs.help_cog")
 bot.load_extension("helpercogs.channel_about_cog")

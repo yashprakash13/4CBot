@@ -9,6 +9,8 @@ python-dotenv = "*"
 "discord.py" = "*"
 black = "*"
 isort = "*"
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
 
 [dev-packages]
 
