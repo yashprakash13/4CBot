@@ -45,12 +45,28 @@ from fastapi import FastAPI
 app = FastAPI()  # notice that the app instance is called `app`, this is very important.
 
 
+@app.get("/")
+def main():
+    return "Your bot is alive!"
+
+
 def run():
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
 
-@app.get("/")
-async def run_bot():
+# from flask import Flask
+
+# app = Flask('')
+
+# def run():
+#     app.run(host="0.0.0.0", port=8080)
+
+# def keep_alive():
+#     server = Thread(target=run)
+#     server.start()
+
+
+def run_bot():
     t = Thread(target=run)
     t.start()
 

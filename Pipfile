@@ -11,6 +11,7 @@ black = "*"
 isort = "*"
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
+flask = "*"
 
 [dev-packages]
 
