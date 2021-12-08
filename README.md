@@ -1,2 +1,3 @@
-# 4C Community Discord Bot
+# 4C Discord Bot
 
+The extraordinary [4C Community](https://github.com/FrancescoXX/4c-site) Discord Bot. 
