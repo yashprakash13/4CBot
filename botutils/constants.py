@@ -12,6 +12,16 @@ STATUS_ACTIVITY_DICT = {
     # "It's OK. You're only human, after all.": discord.ActivityType.playing,
 }
 
+# just a placeholder reply for the bot in case a message/embed isn't formed
+BLANK_REPLY = "AVADA KEDAVRA"
+
+# All channels and their IDs
+ARTICLES_CHANNEL = 881160567950278686
+ARTICLES_LINKS_CHANNEL = 881221170903531520
+VIDEOS_CHANNEL = 784146876639084574
+VIDEOS_LINKS_CHANNEL = 784150280970174474
+GENERAL_CHANNEL = 784146201959596133
+
 # The descriptions of all channels in the 4C server
 CHANNEL_ABOUT_COG_CONTENT = {
     784382445205848106: "Here you can make respectful suggestions about the server itself.",
