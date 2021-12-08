@@ -45,3 +45,6 @@ CHANNEL_ABOUT_COG_CONTENT = {
     908990638064795648: "Talk about growing your online audience here.",
     898876415049613342: "This chat is intended to share links or use the chat while in a videocall or a stream.",
 }
+
+# a flag to indicate whether to react to a message or not
+REACT_OR_NOT = False

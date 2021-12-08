@@ -10,6 +10,7 @@ from botutils.constants import (
     ARTICLES_LINKS_CHANNEL,
     BLANK_REPLY,
     GENERAL_CHANNEL,
+    REACT_OR_NOT,
     VIDEOS_CHANNEL,
     VIDEOS_LINKS_CHANNEL,
 )
@@ -20,7 +21,7 @@ def handle_article_articlelinks_stupidity(message):
     message_reply = BLANK_REPLY
     if len(all_links) > 0:
         message_reply = f"You have sent a link here in the discussions channel. Are you sure it doesn't belong in either <#{ARTICLES_LINKS_CHANNEL}> or <#{GENERAL_CHANNEL}>?"
-    return message_reply
+    return (message_reply, ~REACT_OR_NOT)
 
 
 def handle_videos_videoslinks_stupidity(message):
@@ -28,4 +29,4 @@ def handle_videos_videoslinks_stupidity(message):
     message_reply = BLANK_REPLY
     if len(all_links) > 0:
         message_reply = f"You have sent a link here in the discussions channel. Are you sure it doesn't belong in either  <#{VIDEOS_LINKS_CHANNEL}> or <#{GENERAL_CHANNEL}>?"
-    return message_reply
+    return (message_reply, ~REACT_OR_NOT)

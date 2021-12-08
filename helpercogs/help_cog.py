@@ -16,7 +16,7 @@ class HelpCog(Cog):
             await asyncio.sleep(1)
         embed_help = get_help_embed()
         message = await ctx.send(embed=embed_help)
-        await message.add_reaction("😎")
+        await message.add_reaction("✅")
 
     # @command('about')
     # async def about(self, ctx):
