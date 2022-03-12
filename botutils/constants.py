@@ -13,7 +13,7 @@ STATUS_ACTIVITY_DICT = {
 }
 
 # just a placeholder reply for the bot in case a message/embed isn't formed
-BLANK_REPLY = "AVADA KEDAVRA"
+BLANK_REPLY = "_BLANK_"
 
 # All channels and their IDs
 ARTICLES_CHANNEL = 881160567950278686

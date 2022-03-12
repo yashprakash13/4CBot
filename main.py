@@ -1,5 +1,6 @@
 import asyncio
 import os
+import time
 from itertools import cycle
 
 import discord
@@ -62,7 +63,7 @@ async def on_message(message):
         async with message.channel.typing():
             for reply in replies_to_send:
                 reply_text_to_send, reply_reaction = reply[0], reply[1]
-                if reply_reaction:  # if we need a reaction as a 👍
+                if reply_reaction:  # if we need a reaction (as a 👍) as indicated in the brain modules
                     try:
                         reply_text_to_send = (
                             reply_text_to_send
@@ -91,6 +92,10 @@ async def on_message(message):
 
                     except:  # if no reaction was added, do nothing.
                         pass
+                else:
+                    await message.reply(reply_text_to_send, mention_author=True)
+                    time.sleep(5)
+                    await message.delete()
 
 
 from threading import Thread
@@ -98,12 +103,12 @@ from threading import Thread
 import uvicorn
 from fastapi import FastAPI
 
-app = FastAPI()  # notice that the app instance is called `app`, this is very important.
+app = FastAPI()
 
 
 @app.get("/")
 def main():
-    return "Your bot is alive!"
+    return "The bot is alive!"
 
 
 def run():

@@ -14,9 +14,12 @@ class ChannelAbout(Cog):
         async with ctx.typing():
             await asyncio.sleep(1)
         channel_sent_in = ctx.message.channel.id
-        channel_desc_to_send = CHANNEL_ABOUT_COG_CONTENT[channel_sent_in]
-        message = await ctx.send(str(channel_desc_to_send))
-        await message.add_reaction("😎")
+        try:
+            channel_desc_to_send = CHANNEL_ABOUT_COG_CONTENT[channel_sent_in]
+            message = await ctx.send(str(channel_desc_to_send))
+            await message.add_reaction("😎")
+        except:
+            await ctx.send("Sorry, no **about** info set for this channel yet.")
 
 
 def setup(bot):
