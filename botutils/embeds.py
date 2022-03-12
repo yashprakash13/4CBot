@@ -19,7 +19,7 @@ def get_help_embed():
 
     embed.add_field(
         name="2. Housekeeping functions",
-        value=f"This is a feature to help moderate the articles and videos channels in the server.",
+        value=f"This is a feature to help moderate the articles, videos, and general channels in the server.",
         inline=False,
     )
 
