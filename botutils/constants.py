@@ -48,3 +48,9 @@ CHANNEL_ABOUT_COG_CONTENT = {
 
 # a flag to indicate whether to react to a message or not
 REACT_OR_NOT = False
+
+# list of link prefixes to not reply to
+SAFE_LINKS = [
+    "github.com",
+    "tenor.com",
+]
