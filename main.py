@@ -97,6 +97,36 @@ async def on_message(message):
                     time.sleep(5)
                     await message.delete()
 
+# Code for mute and unmute commands
+# Keep track of channels that are muted
+muted_channels = set()
+
+def is_voice_channel(ctx): # Check if channel is a voice channel
+    return ctx.message.channel.type == discord.ChannelType.voice
+
+# For users that join after mute or unmute is used
+@bot.event 
+async def on_voice_state_update(member,before,after):
+        if after.channel and after.channel.id in muted_channels:
+            await member.edit(mute=True)
+
+# mute command
+@bot.command(name="mute")
+@commands.has_role("Admin")
+@commands.check(is_voice_channel)
+async def mute_voice(ctx):
+    muted_channels.add(ctx.channel.id)
+    for member in ctx.channel.members:
+        await member.edit(mute=True)
+
+# unmute command
+@bot.command(name="unmute")
+@commands.has_role("Admin")
+@commands.check(is_voice_channel)
+async def mute_voice(ctx):
+    muted_channels.remove(ctx.channel.id)
+    for member in ctx.channel.members:
+        await member.edit(mute=False)
 
 from threading import Thread
 
